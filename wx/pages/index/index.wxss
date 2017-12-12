@@ -1,0 +1,20 @@
+.bc_green{
+  width:100rpx;
+  height:100rpx;
+  background: #0f0;
+}
+.bc_red{
+  width:100rpx;
+  height:100rpx;
+  background: #f00;
+}
+.bc_yellow{
+  width:100rpx;
+  height:100rpx;
+  background: #ff0;
+}
+.bc_blue{
+  width:100rpx;
+  height:100rpx;
+  background: #00f;
+}

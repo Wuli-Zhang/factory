@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+@import "~@/lib/reset.scss";
+
+html, body, #app, .container{
+    @include rect(100%, 100%);//矩形，长宽均为100%
+    @include root-scroll();//禁止滚动，默认为false 表示不可以滚动，如果传入参数true，表示可以滚动
+}
+a{
+    color:#999
+}
+.container{
+    @include flexbox();//弹性盒布局
+    @include flex-direction(column);
+    .mainContent{
+        @include flex(1);
+           width: 100%;
+        overflow: auto;
+        
+        .content{
+            @include flexbox();//弹性盒布局
+            @include flex-direction(column);
+            @include rect(100%, auto);
+            
+            header{
+                @include rect(100%, 0.45rem);
+                @include bgcolor(#fff);
+                @include textcolor(#A4a4a4);
+                @include lineheight(0.44rem);
+//              position:fixed;
+//              top:0;
+//              left:0;
+                @include flexbox();
+                p{
+                   text-align: center;
+                   &:nth-child(1){
+                        @include fontsize(0.29rem);
+                        @include textcolor(#f36)
+                       width: 0.6rem;
+                   }
+                    &.icon-xiaoxi{
+                        @include fontsize(0.20rem);
+                        display: block;
+                        width: 0.49rem;
+                        
+                    }
+                }
+                form{
+                    @include flex(1);
+                    @include rect(100%, 0.28rem);
+                    @include flexbox(column);
+                    align-content: center;
+                    @include bgcolor(#F4F4F4);
+                    @include border-radius(5px);
+                    margin:7.5px 0;
+                    span{
+                        text-align: center;
+                        @include lineheight(0.28rem);
+                        display: block;
+                        @include rect(0.28rem,auto );
+                    }
+                    input{
+                        @include flex(1);
+                        @include rect(auto, 0.14rem);
+                        @include bgcolor(#F4F4F4);
+                        border:0;
+                        margin:7px
+                    }
+                }
+            }
+            #content{
+//              margin-top: 0.44rem;
+                @include flex(1);
+                @include rect(100%, auto);
+                @include root-scroll(true);
+            }
+        }
+    }
+    #footer{
+         @include rect(100%, 0.5rem);
+         @include bgcolor(#fafafa);
+         @include border(1px 0 0 0,#E5E5E5)
+    }
+}
